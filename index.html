@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Osusowake Kitchen — A local Japanese cooking experience in Yokohama: market walk + home-style cooking." />
+  <title>Osusowake Kitchen | Yokohama Cooking Class</title>
+
+  <!-- Social preview (optional) -->
+  <meta property="og:title" content="Osusowake Kitchen | Yokohama Cooking Class" />
+  <meta property="og:description" content="Market walk + home-style Japanese cooking in Yokohama." />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="https://your-domain.com/og.jpg" /> -->
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --card:#11131a;
+      --text:#f3f4f6;
+      --muted:#b6bcc8;
+      --line:rgba(255,255,255,.10);
+      --accent:#ffffff;
+      --btn:#ffffff;
+      --btnText:#0b0c10;
+      --radius:18px;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,255,255,.08), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(255,255,255,.06), transparent 55%),
+                  var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 16px 56px}
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11,12,16,.70);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent); display:inline-block}
+    .navlinks{
+      display:flex; gap:14px; align-items:center;
+      font-size:14px; color:var(--muted);
+    }
+    .navlinks a{ text-decoration:none; padding:8px 10px; border-radius:12px }
+    .navlinks a:hover{ background: rgba(255,255,255,.06); color:var(--text) }
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--btn);
+      color: var(--btnText);
+      font-weight: 700;
+      text-decoration:none;
+      box-shadow: var(--shadow);
+      white-space:nowrap;
+    }
+
+    /* Hero */
+    .hero{
+      padding-top: 26px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroText{ padding: 22px 18px }
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+    }
+    h1{
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.15;
+      margin: 14px 0 10px;
+      letter-spacing: -.4px;
+    }
+    .sub{
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 16px;
+      max-width: 58ch;
+    }
+    .heroActions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 16px;
+    }
+    .btnGhost{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      text-decoration:none;
+      font-weight: 600;
+    }
+    .btnGhost:hover{ background: rgba(255,255,255,.06) }
+
+    .heroMedia{
+      position: relative;
+      min-height: 320px;
+    }
+    .heroMedia img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.05);
+    }
+    .badge{
+      position:absolute;
+      left: 12px;
+      bottom: 12px;
+      right: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(11,12,16,.55);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+      font-size: 14px;
+    }
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 13px;
+      white-space:nowrap;
+    }
+
+    /* Sections */
+    section{ margin-top: 18px }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .feature{ padding: 16px 14px }
+    .feature h3{ margin: 0 0 6px; font-size: 16px }
+    .feature p{ margin: 0; color: var(--muted); font-size: 14px }
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .content{ padding: 16px 14px }
+    .content h2{ margin: 0 0 8px; font-size: 18px }
+    .list{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px }
+    .list li{ margin: 6px 0 }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 12px;
+    }
+    .gallery img{
+      width:100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      display:block;
+    }
+
+    /* FAQ */
+    details{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.02);
+      padding: 12px 14px;
+    }
+    details + details{ margin-top: 10px }
+    summary{
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{ margin: 8px 0 0; color: var(--muted); font-size: 14px }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    /* Bottom sticky CTA for mobile */
+    .bottomBar{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(11,12,16,.78);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      display:none;
+      z-index: 60;
+    }
+    .bottomBar .row{
+      max-width: var(--max);
+      margin: 0 auto;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .small{ font-size: 12px; color: var(--muted) }
+
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero{ grid-template-columns: 1fr; }
+      .heroMedia{ min-height: 260px; }
+      .grid{ grid-template-columns: 1fr; }
+      .twoCol{ grid-template-columns: 1fr; }
+      .navlinks{ display:none; }
+      .bottomBar{ display:block; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <span class="dot" aria-hidden="true"></span>
+        Osusowake Kitchen
+      </a>
+      <div class="navlinks" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <!-- Replace with your booking / inquiry link -->
+      <a class="cta" href="https://example.com/booking" target="_blank" rel="noopener">Book / Inquire</a>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero" aria-label="Hero">
+      <div class="card heroText">
+        <div class="kicker">Yokohama • Market walk + Cooking • Small group</div>
+        <h1>Immerse yourself in a local Japanese cooking class.</h1>
+        <p class="sub">
+          Explore a neighborhood shopping street, pick ingredients together, and cook home-style Japanese dishes.
+          Designed for travelers who want something real—not a staged tourist show.
+        </p>
+
+        <div class="heroActions">
+          <a class="cta" href="https://example.com/booking" target="_blank" rel="noopener">Book / Inquire</a>
+          <a class="btnGhost" href="#experience">See what you’ll do</a>
+        </div>
+
+        <div style="margin-top:14px; display:flex; gap:8px; flex-wrap:wrap;">
+          <span class="pill">Duration: ~3 hours</span>
+          <span class="pill">Language: English</span>
+          <span class="pill">Location: Yokohama</span>
+        </div>
+      </div>
+
+      <div class="card heroMedia" aria-label="Hero image">
+        <!-- Replace with your image -->
+        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=70" alt="Cooking in a home kitchen" />
+        <div class="badge">
+          <div>
+            <div style="font-weight:800;">Market → Cook → Eat</div>
+            <div class="small">A local experience hosted by Ichiho</div>
+          </div>
+          <a class="btnGhost" href="#about">Meet the host</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="experience" aria-label="Highlights">
+      <div class="card feature">
+        <h3>1) Market walk</h3>
+        <p>Visit a local shopping street, learn what Japanese people actually buy, and choose ingredients together.</p>
+      </div>
+      <div class="card feature">
+        <h3>2) Home-style cooking</h3>
+        <p>Cook approachable Japanese dishes (e.g., karaage, tamagoyaki, sushi rolls) in a relaxed home kitchen.</p>
+      </div>
+      <div class="card feature">
+        <h3>3) Eat & connect</h3>
+        <p>Enjoy what you made, ask questions freely, and leave with practical tips you can use anywhere.</p>
+      </div>
+    </section>
+
+    <section class="twoCol" aria-label="About & Gallery">
+      <div class="card content" id="about">
+        <h2>About the host</h2>
+        <p class="sub" style="margin:0 0 12px;">
+          Hi, I’m Ichiho. I host small-group cooking experiences in Yokohama.
+          I focus on everyday Japanese food culture—warm, simple, and authentic.
+        </p>
+        <ul class="list">
+          <li>Small-group format for a personal experience</li>
+          <li>English-friendly, calm pacing</li>
+          <li>Great for first-time visitors who want local context</li>
+        </ul>
+
+        <div style="margin-top:12px; padding-top:12px; border-top:1px solid var(--line);">
+          <div style="font-weight:800; margin-bottom:6px;">Availability (example wording)</div>
+          <div class="small">
+            Classes are mainly held on weekends. Minimum group size may apply.
+            Please contact for dates and details.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" aria-label="Gallery">
+        <div class="gallery">
+          <!-- Replace with your images -->
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=70" alt="Japanese meal" />
+          <img src="https://images.unsplash.com/photo-1555992336-03a23c1d8f63?auto=format&fit=crop&w=1200&q=70" alt="Cooking ingredients" />
+          <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=1200&q=70" alt="Hands cooking" />
+          <img src="https://images.unsplash.com/photo-1504718855392-c0f33b372e72?auto=format&fit=crop&w=1200&q=70" alt="Market street" />
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-label="FAQ">
+      <div class="card content">
+        <h2>FAQ</h2>
+
+        <details>
+          <summary>Do I need cooking experience?</summary>
+          <p>No. The class is designed for beginners and travelers. I’ll guide you step by step.</p>
+        </details>
+
+        <details>
+          <summary>Is this suitable for solo travelers?</summary>
+          <p>It can be, but availability depends on the schedule. (If you prefer: state a minimum group size here.)</p>
+        </details>
+
+        <details>
+          <summary>How do I book?</summary>
+          <p>Use the “Book / Inquire” button to send your preferred date, number of guests, and dietary notes.</p>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Osusowake Kitchen</div>
+      <div class="small">Contact: <a href="mailto:hello@example.com">hello@example.com</a> (replace)</div>
+    </footer>
+  </main>
+
+  <!-- Mobile bottom bar -->
+  <div class="bottomBar" role="region" aria-label="Quick booking">
+    <div class="row">
+      <div>
+        <div style="font-weight:800; font-size:14px;">Osusowake Kitchen</div>
+        <div class="small">Yokohama • Market walk + Cooking</div>
+      </div>
+      <a class="cta" href="https://example.com/booking" target="_blank" rel="noopener">Book</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
