@@ -13,19 +13,20 @@
   <!-- <meta property="og:image" content="https://your-domain.com/og.jpg" /> -->
 
   <style>
-    :root{
-  --bg:#f7f7f7;              /* ページ背景 */
-  --card:#ffffff;            /* カード背景 */
-  --text:#111111;            /* メイン文字 */
-  --muted:#555555;           /* 補足文字 */
-  --line:rgba(0,0,0,.10);    /* 枠線 */
-  --accent:#111111;
-  --btn:#111111;             /* ボタン背景 */
-  --btnText:#ffffff;         /* ボタン文字 */
+ :root{
+  --bg:#f5f6f8;             /* 画面全体の背景：薄いグレー寄りの白 */
+  --card:#ffffff;           /* カードは純白 */
+  --text:#0b0c10;           /* 文字：ほぼ黒（締まる） */
+  --muted:#475569;          /* サブ文字：読みやすいグレー */
+  --line:rgba(15,23,42,.10);/* 罫線：白基調でも見える */
+  --accent:#0b0c10;         /* アクセント（ドット等） */
+  --btn:#0b0c10;            /* ボタン：黒 */
+  --btnText:#ffffff;        /* ボタン文字：白 */
   --radius:18px;
-  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --shadow: 0 8px 20px rgba(15,23,42,.12);  /* 影：浅く・はっきり */
   --max: 1040px;
 }
+
 
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -33,9 +34,11 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,255,255,.08), transparent 60%),
-                  radial-gradient(900px 500px at 90% 0%, rgba(255,255,255,.06), transparent 55%),
-                  var(--bg);
+      background:
+  radial-gradient(1200px 600px at 20% -10%, rgba(15,23,42,.06), transparent 60%),
+  radial-gradient(900px 500px at 90% 0%, rgba(15,23,42,.04), transparent 55%),
+  var(--bg);
+
       line-height:1.5;
     }
     a{color:inherit}
@@ -92,13 +95,18 @@
       align-items: stretch;
     }
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .heroText{ padding: 22px 18px }
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+    .heroText{
+  padding: 22px 18px;
+  background: #f9fafb;   /* ← これを追加 */
+}
+
     .kicker{
       display:inline-flex; gap:8px; align-items:center;
       font-size: 12px;
@@ -113,6 +121,7 @@
       line-height:1.15;
       margin: 14px 0 10px;
       letter-spacing: -.4px;
+      color: var(--text);
     }
     .sub{
       font-size: 16px;
